@@ -138,12 +138,15 @@
 ### 安装过程
 * 将文件解压到：C:\Program Files\Apache Software Foundation\Apache2.2\htdocs，重命名为PhpMyAdmin。
 * 修改配置：打开phpMyAdmin\libraries\config.default.php文件，将以下值修改为如下：
-	* $cfg['PmaAbsoluteUri'] = ‘http://localhost/PHPMyadmin/’
-	* $cfg['Servers'][$i]['host'] = ‘localhost’
-	* $cfg['Servers'][$i]['user'] = ‘root’
-	* $cfg['Servers'][$i]['password'] = ‘Mysql PWD'
-	* $cfg['Servers'][$i]['auth_type'] = ‘cookie’
-	* $cfg['blowfish_secret'] = ‘cookie’
+
+```
+	$cfg['PmaAbsoluteUri'] = ‘http://localhost/PHPMyadmin/’
+	$cfg['Servers'][$i]['host'] = ‘localhost’
+	$cfg['Servers'][$i]['user'] = ‘root’
+	$cfg['Servers'][$i]['password'] = ‘Mysql PWD'
+	$cfg['Servers'][$i]['auth_type'] = ‘cookie’
+	$cfg['blowfish_secret'] = ‘cookie’
+```
 * 在浏览器输入：http://localhost/phpmyadmin/，登录访问。
 
 
@@ -151,18 +154,20 @@
 * 从http://glob.com.au/sendmail/下载sendmail.zip
 * 解压到C:下，例如C:\PHP\sendmail，最好短路径，长路径名有可能产生问题。
 * 修改sendmail.ini如下，以QQ邮箱为例:
+
 	```
-	* smtp_server=smtp.qq.com
-	* smtp_port=25
-	* auth_username=myQQ
-	* auth_password=myPassword
+	smtp_server=smtp.qq.com
+	smtp_port=25
+	auth_username=myQQ
+	auth_password=myPassword
 	```
 * 修改PHP的php.ini文件为如下，以QQ邮箱为例：
+
 	```
-	* SMTP = localhost
-	* smtp_port = 25
-	* sendmail_from = myQQ@qq.com
-	* sendmail_path = "C:\PHP\sendmail\sendmail.exe -t"
+	SMTP = localhost
+	smtp_port = 25
+	sendmail_from = myQQ@qq.com
+	sendmail_path = "C:\PHP\sendmail\sendmail.exe -t"
 	```
 * 在C:\Program Files\Apache Software Foundation\Apache2.2\htdocs目录下新建mailTest.php,里面内容如下：
 
