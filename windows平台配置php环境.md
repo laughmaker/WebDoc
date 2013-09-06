@@ -1,9 +1,10 @@
-# Windows平台配置PHP开发环境
+# Windows平台配置PHP开发环境	
 ```
 注：这里使用的平台为windows server 2003,其它版本可能需要根据相应环境下载相应的版本。安装过程可以自己选择安装目录，这次安装过程全部使用默认的目录。
 ```
 
 ## 一、安装apache
+
 ```
 版本解释：
 	openssl是表示带有openssl模块，利用openssl就可以给Apache配置SSL安全链接的，也就是使用https://方式进行访问。
@@ -14,9 +15,12 @@
 ### 安装过程
 * 运行apache安装程序，一直next,默认是安装到C:\Program Files目录下，默认选择80端口。
 * 添加PHP运行相关参数设置：打开C:\Program Files\Apache Software Foundation\Apache2.2\conf目录下的httpd.conf文档，在#LoadModule vhost_alias_module modules/mod_vhost_alias.so下添加：
-	* LoadModule php5_module "C:/PHP/php5apache2_2.dll"
-	* PHPIniDir "C:/PHP"
-	* AddType application/x-httpd-php .php .html .htm
+
+	```
+	LoadModule php5_module "C:/PHP/php5apache2_2.dll"
+	PHPIniDir "C:/PHP"
+	AddType application/x-httpd-php .php .html .htm
+	```
 
 	需要注意的是，这三行代码后面不能有空格，否则会找不到文件，另外目录中的地址为PHP的安装地址。
 * 测试一下，在C:\Program Files\Apache Software Foundation\Apache2.2\htdocs目录中新建一个index.html页面，输出hello apahce，如果能正常显示，则表示apache已正常运行。
@@ -68,15 +72,15 @@
 * 将PHP目录下的php.ini-recommended改名为php.ini-recommended，打开php.ini.
 	* 去掉以下文件前面的注释符号";"，
 	
-			```
-			extension=php_curl.dll
-			extension=php_gd2.dll
-			extension=php_mbstring.dll
-			extension=php_mysql.dll
-			extension=php_mysqli.dll
-			extension=php_pdo_mysql.dll
-			extension=php_xmlrpc.dll
-			```
+		```
+		extension=php_curl.dll
+		extension=php_gd2.dll
+		extension=php_mbstring.dll
+		extension=php_mysql.dll
+		extension=php_mysqli.dll
+		extension=php_pdo_mysql.dll
+		extension=php_xmlrpc.dll
+		```
 	* 去掉;date.timezone =前的注释符号";"，并赋值为date.timezone = Asia/Shanghai。
 * 设置环境变量：
 	* 开始->控制面板->系统->环境变量，在系统变量一栏找到Path这一项，在里面添加PHP的安装目录，两个目录之间以";"号分隔，我的设置后如下：C:\Program Files\Parallels\Parallels Tools\Applications;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\PHP;C:\PHP\ext，其中后两个是自己添加的。
