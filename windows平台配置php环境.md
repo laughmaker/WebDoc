@@ -104,6 +104,8 @@
 	* 配置完PHP后为了让环境变量生效，需要重启电脑。
 	* 若php无法运行，搜索extension_dir= ,修改值为ext的安装目录，这里的目录为C:\PHP\ext，若PHP运行正常，则无需修改。*
 	
+---
+	
 ## 测试PHP是否能连接到MYSQL
 * C:\Program Files\Apache Software Foundation\Apache2.2\htdocs目录下新建phpMysqlTest.php,里面输入如下内容：
 
@@ -132,6 +134,7 @@
 	```
 	在浏览器里输入http://localhost/phpMysqlTest.php，如果显示Connected successfully，则表示PHP连接MYSql成功。
 
+---
 
 ## 安装PhpMyAdmin(非必须)
 ```
@@ -153,6 +156,8 @@
 ```
 * 在浏览器输入：http://localhost/phpmyadmin/，登录访问。
 
+
+---
 
 ## 配置smtp服务器
 * 从http://glob.com.au/sendmail/下载sendmail.zip
@@ -204,6 +209,7 @@
 * 在浏览器输入：http://localhost/mailTest.php，然后看提示是否成功，然后到邮箱查看。
 
 
+---
 
 # 总结：
 * 至此，整个配置已完成，以下是几个比较有帮助的链接：
